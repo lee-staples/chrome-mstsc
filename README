@@ -1,0 +1,21 @@
+Base Images of Fedora 33
+
+Using fedora repo packages
+
+With pulseaudio-module-xrdp built from source https://github.com/neutrinolabs/pulseaudio-module-xrdp
+
+Running as systemd
+
+To run under docker
+
+docker run --interactive --tty --rm --publish 3389:3389 --tmpfs /tmp/ --tmpfs /run --volume /sys/fs/cgroup:/sys/fs/cgroup:ro --shm-size 1gb leestaples/chrome-mstsc
+
+To run with selinux enabled need to allow container to manage cgoup
+
+setsebool -P container_manage_cgroup true
+
+Attached with your preferred client RDP / MSTSC / FreeRDP / Remmina
+
+login details
+
+user : apps password : Password123!
