@@ -61,6 +61,8 @@ RUN ./bootstrap && \
 
 FROM basebuild
 
+EXPOSE 3389
+
 COPY --from=builder /root/pulseaudio-module-xrdp /root/pulseaudio-module-xrdp
 WORKDIR /root/pulseaudio-module-xrdp/src/
 RUN /usr/bin/install -c .libs/module-xrdp-sink.so /usr/lib64/pulse-14.0/modules/module-xrdp-sink.so && \
